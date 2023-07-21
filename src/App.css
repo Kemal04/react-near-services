@@ -1,0 +1,38 @@
+.bg-dark-blue {
+    background-color: #1E1F29;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+}
+
+.fw-black {
+    font-weight: 500 !important;
+}
+
+.bg-dark-blue-700 {
+    background-color: #15161D;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus,
+.nav>li.active>a {
+    color: #D10024!important;
+    background-color: transparent;
+}
+
+.nav>li>a:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #D10024;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.nav>li>a:hover:after,
+.nav>li>a:focus:after,
+.nav>li.active>a:after {
+    width: 100%;
+}
