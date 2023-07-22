@@ -17,7 +17,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='container-fluid p-0 text-center'>
+        <div className='container-fluid px-5 text-center'>
             <Splide options={options} hasTrack={false}>
                 <SplideTrack className='row g-0'>
                     <SplideSlide className='col-lg-12 p-0' >

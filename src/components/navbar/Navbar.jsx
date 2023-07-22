@@ -31,7 +31,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-dark-blue-700 text-white pt-4 pb-3 ">
+
+            <div className="bg-dark-blue-700 text-white pt-4 pb-3 position-sticky top-0" style={{ zIndex: "100" }}>
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-xl-4 h1">
@@ -58,11 +59,132 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="border-bottom py-2">
+
+            <div className="border-bottom py-2 shadow">
                 <div className="container">
-                    <ul className="nav">
+                    <ul className="nav navbar1 position-relative">
                         <li className="nav-item">
                             <NavLink to='/' className="nav-link text-dark">Active</NavLink>
+                            <div className="nav-dropdown">
+                                <div className="nav-dropdown-center">
+                                    <div className="nav-dropdown-row">
+                                        <div className="nav-dropdown-column">
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Trousers</Link></li>
+                                                </ul>
+                                            </div>
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Shorts</Link></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="nav-dropdown-column">
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Trousers</Link></li>
+                                                    <li><Link to="/">Shorts</Link></li>
+                                                    <li><Link to="/">Blouse</Link></li>
+                                                    <li><Link to="/">Jacket</Link></li>
+                                                    <li><Link to="/">Skirt</Link></li>
+                                                    <li><Link to="/">Beach Wear</Link></li>
+                                                    <li><Link to="/">Hijab</Link></li>
+                                                    <li><Link to="/">Big size</Link></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="nav-dropdown-column">
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Trousers</Link></li>
+                                                    <li><Link to="/">Shorts</Link></li>
+                                                    <li><Link to="/">Blouse</Link></li>
+                                                    <li><Link to="/">Jacket</Link></li>
+                                                    <li><Link to="/">Skirt</Link></li>
+                                                    <li><Link to="/">Beach Wear</Link></li>
+                                                    <li><Link to="/">Hijab</Link></li>
+                                                    <li><Link to="/">Big size</Link></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="nav-dropdown-column">
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Trousers</Link></li>
+                                                    <li><Link to="/">Shorts</Link></li>
+                                                    <li><Link to="/">Blouse</Link></li>
+                                                    <li><Link to="/">Jacket</Link></li>
+                                                    <li><Link to="/">Skirt</Link></li>
+                                                    <li><Link to="/">Beach Wear</Link></li>
+                                                    <li><Link to="/">Hijab</Link></li>
+                                                    <li><Link to="/">Big size</Link></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="nav-dropdown-column">
+                                            <div className="nav-dropdown-box">
+                                                <Link to="/" className="nav-dropdown-box__link">CLOTHES</Link>
+                                                <ul>
+                                                    <li><Link to="/">Dress</Link></li>
+                                                    <li><Link to="/">T-shirt</Link></li>
+                                                    <li><Link to="/">Shirt</Link></li>
+                                                    <li><Link to="/">Jeans</Link></li>
+                                                    <li><Link to="/">Denim Jacket</Link></li>
+                                                    <li><Link to="/">Trousers</Link></li>
+                                                    <li><Link to="/">Shorts</Link></li>
+                                                    <li><Link to="/">Blouse</Link></li>
+                                                    <li><Link to="/">Jacket</Link></li>
+                                                    <li><Link to="/">Skirt</Link></li>
+                                                    <li><Link to="/">Beach Wear</Link></li>
+                                                    <li><Link to="/">Hijab</Link></li>
+                                                    <li><Link to="/">Big size</Link></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="campaign-container">
+                                            <div className="campaign-column">
+                                                <Link to="/">
+                                                    {/* <img src="img/bg/banner_2.png" alt="" className="img-fluid"> */}
+                                                </Link>
+                                                <Link to="/">
+                                                    {/* <img src="img/bg/banner_2.png" alt="" className="img-fluid"> */}
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li className="nav-item">
                             <NavLink to='/' className="nav-link text-dark">Hot Deals</NavLink>
