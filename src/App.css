@@ -204,3 +204,8 @@
 .nav-dropdown .nav-dropdown-center .nav-dropdown-row .nav-dropdown-column .nav-dropdown-box ul li a:hover {
     text-decoration: underline;
 }
+
+.form-control:focus{
+    border-color: #dee2e6!important;
+    box-shadow: none!important;
+}

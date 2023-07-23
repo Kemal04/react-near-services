@@ -26,7 +26,7 @@ const Navbar = () => {
                         </div>
                         <div className="col-xl-6 text-end small">
                             <FontAwesomeIcon icon={faUserAlt} className="text-danger me-2" />
-                            <Link className="text-decoration-none text-white" to='/'>Login</Link>
+                            <Link className="text-decoration-none text-white" to='/login'>Login</Link>
                         </div>
                     </div>
                 </div>
