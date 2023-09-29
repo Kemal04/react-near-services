@@ -2,6 +2,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
 import useFetch from "../../hooks/useFetch";
+import logoImg from '../../assets/logo.svg'
 
 const Navbar = () => {
 
@@ -14,8 +15,9 @@ const Navbar = () => {
                     <div className="container">
 
                         {/* LOGO */}
-                        <Link to="/" className="navbar-brand text-white">
-                            Logo
+                        <Link to="/" className="navbar-brand text-white d-flex align-items-end">
+                            <img src={logoImg} alt="logo" style={{ width: "30px", marginRight: "-8px" }} />
+                            <span className="text-yellow fw-semibold">anymda</span>
                         </Link>
 
                         {/* RESPONSOVE BUTTON */}
@@ -28,18 +30,18 @@ const Navbar = () => {
                             <ul className="navbar-nav ms-auto me-auto align-items-center">
                                 <li className='nav-item'>
                                     <div className="input-group">
-                                        <input type="text" className="form-control ps-4 rounded-start-1" style={{ width: "300px" }} placeholder="Search here" />
+                                        <input type="text" className="form-control ps-4 rounded-start-1" style={{ width: "300px" }} placeholder="Gözle..." />
                                         <button className="btn btn-yellow px-3 fw-black rounded-end-1" type="button"><FontAwesomeIcon icon={faSearch} /></button>
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown ms-5">
                                     <div className="dropdown-toggle cursor-pointer" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" >
-                                        Logo for Business
+                                        Biznes hasaby
                                     </div>
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a className="dropdown-item" href="#">Action</a></li>
-                                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a className="dropdown-item" href="#">Nähili açylyar</a></li>
+                                        <li><a className="dropdown-item" href="#">Aýratynlyklary</a></li>
+                                        <li><a className="dropdown-item" href="#">Näme üçin gerek</a></li>
                                     </ul>
                                 </li>
                             </ul>

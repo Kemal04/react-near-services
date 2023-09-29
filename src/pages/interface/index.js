@@ -10,3 +10,6 @@ export { default as CategoryRead } from "./category/CategoryRead"
 
 export { default as SubCategories } from "./subCategory/SubCategories"
 export { default as SubCategoryRead } from "./subCategory/SubCategoryRead"
+
+export { default as Login } from "./auth/Login"
+export { default as Register } from "./auth/Register"
