@@ -4,6 +4,7 @@ import icon_tweeter from '../../assets/icons/tweeter.svg'
 import icon_ins from '../../assets/icons/ins.svg'
 import icon_web from '../../assets/icons/web.svg'
 import icon_tiktok from '../../assets/icons/tiktok.svg'
+import logoImg from '../../assets/logo.svg'
 
 const Footer = () => {
     return (
@@ -12,10 +13,13 @@ const Footer = () => {
                 <div className="container">
                     <div className="row justify-content-between">
                         <div className="col-xl-3">
-                            <Link to='/' className="h1 text-decoration-none">Logo</Link>
-                            <div className="mt-3 mb-2 small fw-black">Got Question? Call Us 24/7</div>
+                            <Link to="/" className="text-white d-flex align-items-end">
+                                <img src={logoImg} alt="logo" style={{ width: "30px", marginRight: "-8px" }} />
+                                <span className="text-yellow fw-semibold">anymda<span className='text-dark'>.com</span></span>
+                            </Link>
+                            <div className="mt-3 mb-2 small fw-black">Sorag üçin! 24/7 jaň edip bilersiňiz</div>
                             <Link to='/' className="fs-18 text-decoration-none text-primary fw-bold">+993 63 29-78-77</Link>
-                            <div className="mt-2"><Link to='/' className="text-decoration-none text-secondary small">17 Princess Road, London <br /> Grester London NW18JR, UK</Link></div>
+                            <div className="mt-2"><Link to='/' className="text-decoration-none text-secondary small">Aşgabat, Oguzhan köçesi<br /> Sanly Çözgüt IT meýdançasy</Link></div>
                             <div className="d-flex align-items-center justify-content-between mt-3">
                                 <div><img src={icon_youtube} alt="" style={{ width: "30px" }} /></div>
                                 <div><img src={icon_tiktok} alt="" style={{ width: "30px" }} /></div>
@@ -25,10 +29,10 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-xl-3">
-                            <div className="mb-2 fw-black">Find it Fast</div>
+                            <div className="mb-2 fw-black">Giper salgylanmalar</div>
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Computers & Laptops</Link>
+                                    <Link to='/services' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/' className="text-decoration-none small text-secondary fw-black">Cameras & Photos</Link>
@@ -70,13 +74,13 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="col-xl-2">
-                            <div className="mb-2 fw-black">Customer Care</div>
+                            <div className="mb-2 fw-black">Habarlaşmak</div>
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">My Account</Link>
+                                    <Link to="/about-us" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Order Tracking</Link>
+                                    <Link to="/contact" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="" className="text-decoration-none small text-secondary fw-black">Hardware</Link>

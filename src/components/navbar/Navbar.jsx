@@ -1,12 +1,39 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import useFetch from "../../hooks/useFetch";
 import logoImg from '../../assets/logo.svg'
+import { useContext, useState } from "react";
+import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
 
-    const [categories] = useFetch(`${import.meta.env.VITE_API_FETCH}/category`, "category");
+    const [categories] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/category`, "category");
+
+    //AUTH SECTION API
+    const { authState, setAuthState } = useContext(AuthContext)
+
+    const logout = () => {
+        localStorage.removeItem("accessToken");
+        setAuthState({ phone_num: "", id: 0, status: false, role: "User" })
+    };
+
+    //SEARCH SECTION API
+    const [value, setValue] = useState('');
+    const [service, setService] = useState(null)
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+
+        await axios.get(`${import.meta.env.VITE_API_FETCH}/home/service?query=${value}&limit=100`)
+            .then((res) => {
+                setService(res.data.services);
+            }).catch((err) => {
+                console.log(err);
+            });
+        setValue('')
+    };
 
     return (
         <>
@@ -17,7 +44,7 @@ const Navbar = () => {
                         {/* LOGO */}
                         <Link to="/" className="navbar-brand text-white d-flex align-items-end">
                             <img src={logoImg} alt="logo" style={{ width: "30px", marginRight: "-8px" }} />
-                            <span className="text-yellow fw-semibold">anymda</span>
+                            <span className="text-yellow fw-semibold">anymda<span className='text-white'>.com</span></span>
                         </Link>
 
                         {/* RESPONSOVE BUTTON */}
@@ -28,11 +55,24 @@ const Navbar = () => {
                         {/* NAVBAR */}
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ms-auto me-auto align-items-center">
-                                <li className='nav-item'>
-                                    <div className="input-group">
-                                        <input type="text" className="form-control ps-4 rounded-start-1" style={{ width: "300px" }} placeholder="Gözle..." />
-                                        <button className="btn btn-yellow px-3 fw-black rounded-end-1" type="button"><FontAwesomeIcon icon={faSearch} /></button>
-                                    </div>
+                                <li className='nav-item position-relative'>
+                                    <form className="input-group" onSubmit={handleClick}>
+                                        <input value={value} onChange={(e) => setValue(e.target.value)} type="search" className="form-control ps-4 rounded-start-1" style={{ width: "300px" }} placeholder="Gözle..." />
+                                        <button className="btn btn-yellow px-3 fw-black rounded-end-1" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+                                    </form>
+                                    {
+                                        service === null ? "" :
+                                            <div className="position-absolute top-100 text-dark border bg-white rounded-1 w-100 mt-1 py-2 px-4" style={{ zIndex: "1" }}>
+                                                {
+                                                    service?.map((data, index) => (
+                                                        <Link to={`/service/${data.id}`} key={index} className="d-flex align-items-center mb-2 text-decoration-none text-dark">
+                                                            <img src={`http://localhost:3001/api/img/service/${data.service_img}`} alt="" style={{ width: "50px", height: "40px", objectFit: "cover" }} />
+                                                            <div className="ms-2">{data.name_tm}</div>
+                                                        </Link>
+                                                    ))
+                                                }
+                                            </div>
+                                    }
                                 </li>
                                 <li className="nav-item dropdown ms-5">
                                     <div className="dropdown-toggle cursor-pointer" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" >
@@ -45,12 +85,37 @@ const Navbar = () => {
                                     </ul>
                                 </li>
                             </ul>
-                            <div className="nav-item">
-                                <Link to='/login' className="btn btn-outline-light rounded-1">Giriş et</Link>
-                            </div>
-                            <div className="nav-item ms-2">
-                                <Link to='/register' className="btn btn-yellow rounded-1">Hasap aç</Link>
-                            </div>
+
+                            {
+                                !authState.status
+                                    ?
+                                    <>
+                                        <div className="nav-item">
+                                            <Link to='/login' className="btn btn-outline-light rounded-1">Giriş et</Link>
+                                        </div>
+                                        <div className="nav-item ms-2">
+                                            <Link to='/register' className="btn btn-yellow rounded-1">Hasap aç</Link>
+                                        </div>
+                                    </>
+                                    :
+                                    <div className="navbar-nav ms-5">
+                                        <li className="nav-item dropdown">
+                                            <div className="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ letterSpacing: "1px" }}>
+                                                Şahsy Otag
+                                            </div>
+                                            <ul className="dropdown-menu rounded-1">
+                                                {
+                                                    authState.role === "Admin" && <li><NavLink to="/admin" className="dropdown-item bg-white text-black">Admin</NavLink></li>
+                                                }
+                                                {
+                                                    authState.role === "User" && <li><NavLink to={`/profile`} className="dropdown-item bg-white text-black">Şahsy Otagym</NavLink></li>
+                                                }
+                                                <li><hr className="dropdown-divider" /></li>
+                                                <li><button onClick={logout} className="dropdown-item bg-white text-black">Ulgamdan çyk</button></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+                            }
                         </div>
                     </div>
                 </nav >
@@ -63,9 +128,13 @@ const Navbar = () => {
                                         {category.name_tm}
                                     </div>
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a className="dropdown-item" href="#">subCategories</a></li>
-                                        <li><a className="dropdown-item" href="#">subCategories</a></li>
-                                        <li><a className="dropdown-item" href="#">subCategories</a></li>
+                                        {
+                                            category.subcategories?.map((data, index) => (
+                                                <div key={index}>
+                                                    <li><a className="dropdown-item" href="#">{data.name_tm}</a></li>
+                                                </div>
+                                            ))
+                                        }
                                     </ul>
                                 </li>
                             ))

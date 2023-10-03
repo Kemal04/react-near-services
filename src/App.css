@@ -145,5 +145,14 @@
 
 .form-check-input:focus {
     border-color: #f0b90b !important;
-    box-shadow: 0 0 0 0.25rem rgba(240, 185, 11, .25)!important;
+    box-shadow: 0 0 0 0.25rem rgba(240, 185, 11, .25) !important;
+}
+
+.footer-rgba {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.card-about:hover .footer-rgba {
+    background-color: #2a303b !important
 }
