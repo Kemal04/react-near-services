@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="col-xl-3">
                             <Link to="/" className="text-white d-flex align-items-end">
                                 <img src={logoImg} alt="logo" style={{ width: "30px", marginRight: "-8px" }} />
-                                <span className="text-yellow fw-semibold">anymda<span className='text-dark'>.com</span></span>
+                                <span className="text-yellow fw-semibold">akynyňda<span className='text-dark'>.com</span></span>
                             </Link>
                             <div className="mt-3 mb-2 small fw-black">Sorag üçin! 24/7 jaň edip bilersiňiz</div>
                             <Link to='/' className="fs-18 text-decoration-none text-primary fw-bold">+993 63 29-78-77</Link>
@@ -35,41 +35,41 @@ const Footer = () => {
                                     <Link to='/services' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Cameras & Photos</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hardware</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Smartphones & Tablets</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">TV & Audio</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Gadgets</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Car Electronics</Link>
+                                    <Link to='/' className="text-decoration-none small text-secondary fw-black">Hyzmatlar</Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-xl-2">
                             <ul className="nav flex-column">
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Video Games & Consoles</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Accessories</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Cameras & Photos</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Hardware</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Computers & Laptops</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Biz barada</Link>
                                 </li>
                             </ul>
                         </div>
@@ -83,19 +83,19 @@ const Footer = () => {
                                     <Link to="/contact" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Hardware</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Smartphones & Tablets</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">TV & Audio</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Gadgets</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Car Electronics</Link>
+                                    <Link to="" className="text-decoration-none small text-secondary fw-black">Habarlaşmak</Link>
                                 </li>
                             </ul>
                         </div>

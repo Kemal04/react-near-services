@@ -44,7 +44,7 @@ const Navbar = () => {
                         {/* LOGO */}
                         <Link to="/" className="navbar-brand text-white d-flex align-items-end">
                             <img src={logoImg} alt="logo" style={{ width: "30px", marginRight: "-8px" }} />
-                            <span className="text-yellow fw-semibold">anymda<span className='text-white'>.com</span></span>
+                            <span className="text-yellow fw-semibold">akynyňda<span className='text-white'>.com</span></span>
                         </Link>
 
                         {/* RESPONSOVE BUTTON */}
@@ -127,7 +127,7 @@ const Navbar = () => {
                                     <div className="dropdown-toggle cursor-pointer" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" >
                                         {category.name_tm}
                                     </div>
-                                    <ul className="dropdown-menu rounded-1" style={{ minWidth: "350px" }} aria-labelledby="dropdownMenuButton">
+                                    <ul className="dropdown-menu rounded-1" style={{ minWidth: "400px" }} aria-labelledby="dropdownMenuButton">
                                         <div className="row">
                                             {
                                                 category.subcategories?.map((data, index) => (

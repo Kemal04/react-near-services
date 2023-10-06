@@ -8,6 +8,8 @@ const ServiceFilter = () => {
 
     const [services] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/service`, "services");
 
+    const [categories] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/category`, "category");
+
     return (
         <>
             <div className='container-fluid px-0 text-center'>
@@ -19,11 +21,12 @@ const ServiceFilter = () => {
 
             <div className="container mt-5">
                 <div className="row justify-content-between">
+
                     <div className="col-xl-2">
                         <div className='row'>
 
                             <div className='col-xl-12 mb-3 pb-3 border-bottom'>
-                                <div className='mb-3 h5'>Filters</div>
+                                <div className='mb-3 h5'>Filterler</div>
                                 <div className="d-flex align-items-center">
                                     <button className='btn btn-white border rounded-0 rounded-start-5 fw-semibold px-3 btn-sm'>$</button>
                                     <button className='btn btn-white border rounded-0 border-start-0 fw-semibold px-3 btn-sm'>$$</button>
@@ -33,16 +36,48 @@ const ServiceFilter = () => {
                             </div>
 
                             <div className='col-xl-12 mb-3 pb-3 border-bottom'>
-                                <div className='mb-3 h5'>Suggested</div>
+                                <div className='mb-3 h5'>Kategoriýalar</div>
                                 <div className="d-flex flex-column justify-content-center">
-                                    <div className="d-flex align-items-center"><input id='checkbox1' type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' /><label htmlFor="checkbox1"> Restoran</label></div>
-                                    <div className="d-flex align-items-center"><input id='checkbox2' type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' /><label htmlFor="checkbox2"> Restoran</label></div>
-                                    <div className="d-flex align-items-center"><input id='checkbox3' type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' /><label htmlFor="checkbox3"> Restoran</label></div>
+                                    {
+                                        categories?.map((category, index) => (
+                                            <div key={index} className="d-flex align-items-center">
+                                                <input id={`checkbox${category.id}`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                                <label htmlFor={`checkbox${category.id}`}>{category.name_tm}</label>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+
+                            <div className='col-xl-12 mb-3 pb-3 border-bottom'>
+                                <div className='mb-3 h5'>Meşhurlyk</div>
+                                <div className="d-flex flex-column justify-content-center">
+                                    <div className="d-flex align-items-center">
+                                        <input id={`checkboxstar1`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                        <label htmlFor={`checkboxstar1`}>5 ýyldyzly</label>
+                                    </div>
+                                    <div className="d-flex align-items-center">
+                                        <input id={`checkboxstar2`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                        <label htmlFor={`checkboxstar2`}>4 ýyldyzly</label>
+                                    </div>
+                                    <div className="d-flex align-items-center">
+                                        <input id={`checkboxstar3`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                        <label htmlFor={`checkboxstar3`}>3 ýyldyzly</label>
+                                    </div>
+                                    <div className="d-flex align-items-center">
+                                        <input id={`checkboxstar4`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                        <label htmlFor={`checkboxstar4`}>2 ýyldyzly</label>
+                                    </div>
+                                    <div className="d-flex align-items-center">
+                                        <input id={`checkboxstar5`} type="checkbox" className='form-check-input me-2 ms-1 rounded-1 h5' />
+                                        <label htmlFor={`checkboxstar5`}>1 ýyldyzly</label>
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+
                     <div className="col-xl-8">
                         <div className="row">
                             {

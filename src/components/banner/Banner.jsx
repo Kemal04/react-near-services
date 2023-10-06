@@ -28,10 +28,10 @@ const Banner = () => {
                         {
                             banners?.map((banner, index) => (
                                 <SplideSlide key={index}>
-                                    <div style={{ background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${`https://it.net.tm/yakynynda_api/api/img/banner/${banner.banner_img}`})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "85vh", backgroundSize: "cover" }}></div>
-                                    <div className="card-img-overlay text-white top-50 start-50" style={{ zIndex: "10", transform: "translate(-50%, -20%)" }}>
+                                    <div style={{ background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${`https://it.net.tm/yakynynda_api/api/img/banner/${banner.banner_img}`})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "90vh", backgroundSize: "cover" }}></div>
+                                    <div className="card-img-overlay text-white top-50 start-50" style={{ zIndex: "10", transform: "translate(-50%, -30%)" }}>
                                         <div className="display-2 fw-bold">{banner.name_tm}</div>
-                                        <p className="fw-semibold mt-4">
+                                        <p className="fw-semibold mt-4 w-100">
                                             {banner.description_tm}
                                         </p>
                                         <Link target="_blank" to={banner.url} className="btn btn-yellow rounded-1 px-5 fw-semibold">Ýör gideýli</Link>

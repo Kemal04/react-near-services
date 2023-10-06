@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
 
-    const [categories] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/category`, "category");
+    const [subCategories] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/subcategory`, "subcategory");
 
     return (
         <>
@@ -15,7 +15,7 @@ const Home = () => {
 
             <div className="text-center h3 my-5">
                 <Link to='/services' className="text-decoration-none text-dark" >
-                    Recent Activity
+                    Meşhur hyzmatlar
                 </Link>
             </div>
 
@@ -31,17 +31,17 @@ const Home = () => {
             </div>
 
             <div className="text-center h3 my-5">
-                Categories
+                Kategoriýalar
             </div>
 
             <div className="container">
                 <div className="row justify-content-between">
                     {
-                        categories?.map((category, index) => (
+                        subCategories?.map((subCategory, index) => (
                             <div className="col-xl-auto mb-3 text-decoration-none text-dark" key={index}>
                                 <div className="border rounded-1 p-3 d-flex flex-column align-items-center" style={{ width: "240px" }}>
-                                    <img src={`https://it.net.tm/yakynynda_api/api/img/category/${category.category_img}`} alt="" style={{ width: "80px" }} />
-                                    <div className="fw-semibold mt-3">{category.name_tm}</div>
+                                    <img src={`https://it.net.tm/yakynynda_api/api/img/subcategory/${subCategory.subcategory_img}`} alt="" style={{ width: "80px" }} />
+                                    <div className="fw-semibold mt-3">{subCategory.name_tm}</div>
                                 </div>
                             </div>
                         ))
