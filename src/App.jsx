@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom
 import './App.css'
 import { Toaster } from "react-hot-toast";
 import { AdminNavbar, AdminSidebar, Footer, Navbar, ScrollToTop } from './components';
-import { AboutUs, Contact, Home, Login, NotFounded, Register, ServiceRead, Services } from './pages/interface';
+import { AboutUs, Contact, Home, Login, NotFounded, Register, ServiceFilter, ServiceRead, Services } from './pages/interface';
 import { Admin, AdminBannerCreate, AdminBannerEdit, AdminBanners, AdminCategories, AdminCategoryCreate, AdminCategoryEdit, AdminLogin, AdminServiceCreate, AdminServiceEdit, AdminServices, AdminSubCategories, AdminSubCategoryCreate, AdminSubCategoryEdit } from './pages/admin';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -55,6 +55,7 @@ const App = () => {
 
                         <Route path="/services" element={<Services />} />
                         <Route path="/service/:serviceId" element={<ServiceRead />} />
+                        <Route path="/service/filter" element={<ServiceFilter />} />
 
                         <Route path="/about-us" element={<AboutUs />} />
                         <Route path="/contact" element={<Contact />} />

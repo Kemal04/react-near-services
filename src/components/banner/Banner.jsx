@@ -28,7 +28,7 @@ const Banner = () => {
                         {
                             banners?.map((banner, index) => (
                                 <SplideSlide key={index}>
-                                    <div style={{ background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${`http://localhost:3001/api/img/banner/${banner.banner_img}`})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "85vh", backgroundSize: "cover" }}></div>
+                                    <div style={{ background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${`https://it.net.tm/yakynynda_api/api/img/banner/${banner.banner_img}`})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "85vh", backgroundSize: "cover" }}></div>
                                     <div className="card-img-overlay text-white top-50 start-50" style={{ zIndex: "10", transform: "translate(-50%, -20%)" }}>
                                         <div className="display-2 fw-bold">{banner.name_tm}</div>
                                         <p className="fw-semibold mt-4">

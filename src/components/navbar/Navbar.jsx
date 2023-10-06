@@ -66,7 +66,7 @@ const Navbar = () => {
                                                 {
                                                     service?.map((data, index) => (
                                                         <Link to={`/service/${data.id}`} key={index} className="d-flex align-items-center mb-2 text-decoration-none text-dark">
-                                                            <img src={`http://localhost:3001/api/img/service/${data.service_img}`} alt="" style={{ width: "50px", height: "40px", objectFit: "cover" }} />
+                                                            <img src={`https://it.net.tm/yakynynda_api/api/img/service/${data.service_img}`} alt="" style={{ width: "50px", height: "40px", objectFit: "cover" }} />
                                                             <div className="ms-2">{data.name_tm}</div>
                                                         </Link>
                                                     ))
@@ -127,14 +127,19 @@ const Navbar = () => {
                                     <div className="dropdown-toggle cursor-pointer" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" >
                                         {category.name_tm}
                                     </div>
-                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {
-                                            category.subcategories?.map((data, index) => (
-                                                <div key={index}>
-                                                    <li><a className="dropdown-item" href="#">{data.name_tm}</a></li>
-                                                </div>
-                                            ))
-                                        }
+                                    <ul className="dropdown-menu rounded-1" style={{ minWidth: "350px" }} aria-labelledby="dropdownMenuButton">
+                                        <div className="row">
+                                            {
+                                                category.subcategories?.map((data, index) => (
+                                                    <li className="col-xl-6 mb-2" key={index}>
+                                                        <Link to={`/service/filter`} className="dropdown-item d-flex align-items-center">
+                                                            <img src={`https://it.net.tm/yakynynda_api/api/img/subcategory/${data.subcategory_img}`} alt="" style={{ width: "30px" }} />
+                                                            <div className="fw-semibold ms-2">{data.name_tm}</div>
+                                                        </Link>
+                                                    </li>
+                                                ))
+                                            }
+                                        </div>
                                     </ul>
                                 </li>
                             ))

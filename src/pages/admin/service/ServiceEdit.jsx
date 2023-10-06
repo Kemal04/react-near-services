@@ -158,7 +158,17 @@ const ServiceEdit = () => {
                                     <input value={service.latitude} name='latitude' onChange={handleChange} type="text" className="form-control rounded-0" autoComplete="off" />
                                 </div>
 
-                                <div className="col-xl-12 mb-3">
+                                <div className="col-xl-6 mb-3">
+                                    <label className="form-label fw-bold">Bahasy</label>
+                                    <select name='exp_price' onChange={handleChange} className="form-select" required>
+                                        <option defaultValue>Bahasy</option>
+                                        <option value='Arzan'>$</option>
+                                        <option value='Gymmat'>$$</option>
+                                        <option value='Lux'>$$$</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-xl-6 mb-3">
                                     <label className="form-label fw-bold">Sub Category</label>
                                     <select name='subcategoryId' onChange={handleChange} className="form-select" required>
                                         <option defaultValue>{service.subcategory?.name_tm}</option>

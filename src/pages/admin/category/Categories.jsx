@@ -74,7 +74,7 @@ const Categories = () => {
                                     categories?.map((data, index) => (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td><img src={`http://localhost:3001/api/img/category/${data.category_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
+                                            <td><img src={`https://it.net.tm/yakynynda_api/api/img/category/${data.category_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
                                             <td>{data.name_tm}</td>
                                             <td className='d-flex justify-content-between align-items-center'>
                                                 <Link className='btn btn-sm btn-outline-warning mx-3' to={`/admin/category/edit/${data.id}`}><FontAwesomeIcon icon={faPencil} /></Link>

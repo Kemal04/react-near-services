@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 const Services = () => {
 
     const [services, setServices] = useState([])
+    console.log(services);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -78,7 +79,7 @@ const Services = () => {
                                     services?.map((data, index) => (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td><img src={`http://localhost:3001/api/img/service/${data.service_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
+                                            <td><img src={`https://it.net.tm/yakynynda_api/api/img/service/${data.service_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
                                             <td>{data.name_tm}</td>
                                             <td>{data.address}</td>
                                             <td>{data.phone_num}</td>

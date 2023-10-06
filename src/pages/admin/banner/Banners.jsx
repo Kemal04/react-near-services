@@ -76,7 +76,7 @@ const Banners = () => {
                                     banners?.map((data, index) => (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td><img src={`http://localhost:3001/api/img/banner/${data.banner_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
+                                            <td><img src={`https://it.net.tm/yakynynda_api/api/img/banner/${data.banner_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
                                             <td><Link target="_blank" to={data.url}>{data.url}</Link></td>
                                             <td>{data.name_tm}</td>
                                             <td>{data.description_tm}</td>

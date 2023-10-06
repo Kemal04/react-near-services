@@ -16,8 +16,12 @@ const ServiceCreate = () => {
         phone_num: "",
         longitude: "",
         latitude: "",
+        exp_price: "",
         subcategoryId: ""
     })
+
+    console.log(service);
+
     const [img, setImg] = useState('')
 
     const handleChange = (e) => {
@@ -37,6 +41,7 @@ const ServiceCreate = () => {
         formData.append('phone_num', service.phone_num)
         formData.append('longitude', service.longitude)
         formData.append('latitude', service.latitude)
+        formData.append('exp_price', service.exp_price)
         formData.append('subcategoryId', service.subcategoryId)
         formData.append('service_img', img)
 
@@ -61,8 +66,11 @@ const ServiceCreate = () => {
         else if (!service.latitude) {
             toast.error("Latitude ýazyň")
         }
+        else if (!service.exp_price) {
+            toast.error("Bahasyny saýlaň")
+        }
         else if (!service.subcategoryId) {
-            toast.error("Sub category saýla")
+            toast.error("Sub category saýlaň")
         }
         else if (!img) {
             toast.error("Suraty saýlaň")
@@ -133,7 +141,18 @@ const ServiceCreate = () => {
                                     <input name='latitude' onChange={handleChange} type="text" className="form-control rounded-0" autoComplete="off" />
                                 </div>
 
-                                <div className="col-xl-12 mb-3">
+                                <div className="col-xl-6 mb-3">
+                                    <label className="form-label fw-bold">Bahasy</label>
+                                    <select name='exp_price' onChange={handleChange} className="form-select" required>
+                                        <option defaultValue>Bahasy</option>
+                                        <option value='Arzan'>$</option>
+                                        <option value='Orta'>$$</option>
+                                        <option value='Gymmat'>$$$</option>
+                                        <option value='Has gymmat'>$$$$</option>
+                                    </select>
+                                </div>
+
+                                <div className="col-xl-6 mb-3">
                                     <label className="form-label fw-bold">Sub Category</label>
                                     <select name='subcategoryId' onChange={handleChange} className="form-select" required>
                                         <option defaultValue>Sub Categories</option>
