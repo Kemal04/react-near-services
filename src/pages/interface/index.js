@@ -6,6 +6,8 @@ export { default as Services } from "./service/Services"
 export { default as ServiceRead } from "./service/ServiceRead"
 export { default as ServiceFilter } from "./service/ServiceFilter"
 
+export { default as SubCategoryRead } from "./subCategory/SubCategoryRead"
+
 export { default as Login } from "./auth/Login"
 export { default as Register } from "./auth/Register"
 

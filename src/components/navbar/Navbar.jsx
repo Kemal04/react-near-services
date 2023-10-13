@@ -132,7 +132,7 @@ const Navbar = () => {
                                             {
                                                 category.subcategories?.map((data, index) => (
                                                     <li className="col-xl-6 mb-2" key={index}>
-                                                        <Link to={`/service/filter`} className="dropdown-item d-flex align-items-center">
+                                                        <Link to={`/sub-category/${data.id}`} className="dropdown-item d-flex align-items-center">
                                                             <img src={`https://it.net.tm/yakynynda_api/api/img/subcategory/${data.subcategory_img}`} alt="" style={{ width: "30px" }} />
                                                             <div className="fw-semibold ms-2">{data.name_tm}</div>
                                                         </Link>

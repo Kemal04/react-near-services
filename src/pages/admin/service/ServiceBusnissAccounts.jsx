@@ -5,7 +5,7 @@ import toast from "react-hot-toast"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 
-const Services = () => {
+const ServiceBusnissAccounts = () => {
 
     const [services, setServices] = useState([])
 
@@ -42,7 +42,7 @@ const Services = () => {
                     <div className='row align-items-center'>
                         <div className='col-xl-6 col-lg-6 col-md-6 col-12'>
                             <Link to="/admin/service/create" className={`h5 d-flex align-items-center text-decoration-none text-dark`}>
-                                <div>Service ( {services?.length} )</div>
+                                <div>Service Biznes ( {services?.length} )</div>
                                 <FontAwesomeIcon icon={faPlus} className='ms-2' />
                             </Link>
                         </div>
@@ -76,7 +76,7 @@ const Services = () => {
                             <tbody>
                                 {
                                     services?.map((data, index) => (
-                                        data.business_acc === 0 && (
+                                        data.business_acc === 1 && (
                                             <tr key={index}>
                                                 <td>{index + 1}</td>
                                                 <td><img src={`https://it.net.tm/yakynynda_api/api/img/service/${data.service_img}`} className="img-fluid" alt="" crossOrigin="anonymous" style={{ width: "100px" }} /></td>
@@ -105,4 +105,4 @@ const Services = () => {
     )
 }
 
-export default Services
+export default ServiceBusnissAccounts

@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom
 import './App.css'
 import { Toaster } from "react-hot-toast";
 import { AdminNavbar, AdminSidebar, Footer, Navbar, ScrollToTop } from './components';
-import { AboutUs, Contact, Home, Login, NotFounded, Register, ServiceFilter, ServiceRead, Services } from './pages/interface';
-import { Admin, AdminBannerCreate, AdminBannerEdit, AdminBanners, AdminCategories, AdminCategoryCreate, AdminCategoryEdit, AdminLogin, AdminServiceCreate, AdminServiceEdit, AdminServices, AdminSubCategories, AdminSubCategoryCreate, AdminSubCategoryEdit } from './pages/admin';
+import { AboutUs, Contact, Home, Login, NotFounded, Register, ServiceFilter, ServiceRead, Services, SubCategoryRead } from './pages/interface';
+import { Admin, AdminBannerCreate, AdminBannerEdit, AdminBanners, AdminCategories, AdminCategoryCreate, AdminCategoryEdit, AdminLogin, AdminServiceBusnissAccEdit, AdminServiceBusnissAccounts, AdminServiceCreate, AdminServiceEdit, AdminServices, AdminSubCategories, AdminSubCategoryCreate, AdminSubCategoryEdit } from './pages/admin';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from './context/AuthContext';
@@ -57,6 +57,8 @@ const App = () => {
                         <Route path="/service/:serviceId" element={<ServiceRead />} />
                         <Route path="/service/filter" element={<ServiceFilter />} />
 
+                        <Route path="/sub-category/:subId" element={<SubCategoryRead />} />
+
                         <Route path="/about-us" element={<AboutUs />} />
                         <Route path="/contact" element={<Contact />} />
 
@@ -78,6 +80,8 @@ const App = () => {
                                 <Route path="services" element={<AdminServices />} />
                                 <Route path="service/create" element={<AdminServiceCreate />} />
                                 <Route path="service/edit/:serviceId" element={<AdminServiceEdit />} />
+                                <Route path="service/busniss-edit/:serviceId" element={<AdminServiceBusnissAccEdit />} />
+                                <Route path="service/busniss-accounts" element={<AdminServiceBusnissAccounts />} />
 
                                 <Route path="banners" element={<AdminBanners />} />
                                 <Route path="banner/create" element={<AdminBannerCreate />} />

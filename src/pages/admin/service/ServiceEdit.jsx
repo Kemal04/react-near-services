@@ -18,6 +18,7 @@ const ServiceEdit = () => {
         longitude: "",
         latitude: "",
         subcategoryId: "",
+        exp_price: "",
         service_img: "",
     })
     const [img, setImg] = useState('')
@@ -60,6 +61,7 @@ const ServiceEdit = () => {
         formData.append('phone_num', service.phone_num)
         formData.append('longitude', service.longitude)
         formData.append('latitude', service.latitude)
+        formData.append('exp_price', service.exp_price)
         formData.append('subcategoryId', service.subcategoryId)
         formData.append('service_img', img.pictureAsFile === undefined ? img : img.pictureAsFile)
 
@@ -84,6 +86,9 @@ const ServiceEdit = () => {
         }
         else if (!service.latitude) {
             toast.error("Latitude ýazyň")
+        }
+        else if (!service.exp_price) {
+            toast.error("Bahasyny saýlaň")
         }
         else if (!service.subcategoryId) {
             toast.error("Sub category saýla")
@@ -163,8 +168,9 @@ const ServiceEdit = () => {
                                     <select name='exp_price' onChange={handleChange} className="form-select" required>
                                         <option defaultValue>Bahasy</option>
                                         <option value='Arzan'>$</option>
-                                        <option value='Gymmat'>$$</option>
-                                        <option value='Lux'>$$$</option>
+                                        <option value='Orta'>$$</option>
+                                        <option value='Gymmat'>$$$</option>
+                                        <option value='Has gymmat'>$$$$</option>
                                     </select>
                                 </div>
 

@@ -38,11 +38,11 @@ const Home = () => {
                 <div className="row justify-content-between">
                     {
                         subCategories?.map((subCategory, index) => (
-                            <div className="col-xl-auto mb-3 text-decoration-none text-dark" key={index}>
-                                <div className="border rounded-1 p-3 d-flex flex-column align-items-center" style={{ width: "240px" }}>
+                            <div className="col-xl-auto mb-3" key={index}>
+                                <Link to={`/sub-category/${subCategory.id}`} className="border rounded-1 p-3 d-flex flex-column align-items-center text-decoration-none text-dark" style={{ width: "240px" }}>
                                     <img src={`https://it.net.tm/yakynynda_api/api/img/subcategory/${subCategory.subcategory_img}`} alt="" style={{ width: "80px" }} />
                                     <div className="fw-semibold mt-3">{subCategory.name_tm}</div>
-                                </div>
+                                </Link>
                             </div>
                         ))
                     }

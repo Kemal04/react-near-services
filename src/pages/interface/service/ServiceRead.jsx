@@ -8,13 +8,13 @@ import axios from "axios"
 import moment from "moment/moment"
 import toast from "react-hot-toast"
 import { AuthContext } from "../../../context/AuthContext"
-import { Splide, SplideTrack } from "@splidejs/react-splide"
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide"
 
 const ServiceRead = () => {
 
     const option2 = {
         type: 'loop',
-        perPage: 5,
+        perPage: 4,
         focus: 0,
         omitEnd: true,
         perMove: 1,
@@ -33,6 +33,7 @@ const ServiceRead = () => {
     const { serviceId } = useParams()
 
     const [service] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/service/${serviceId}`, "service");
+    console.log(service);
 
     const [services] = useFetch(`${import.meta.env.VITE_API_FETCH}/home/service`, "services");
 
@@ -204,7 +205,7 @@ const ServiceRead = () => {
                                 </div>
                                 <div className="d-flex align-items-center justify-content-between">
                                     <div>
-                                        <span className="fw-semibold">{!service.business_acc ? "Eyesiz" : "Eyeli"}</span>
+                                        {!service.business_acc ? <span className="fw-semibold">Eyesiz</span> : <span className="fw-semibold text-yellow"><FontAwesomeIcon icon={faStar} /> Eyeli</span>}
                                         <span className="mx-3" style={{ display: "inline-block", width: "7px", height: "7px", marginBottom: "3px", backgroundColor: "white", borderRadius: "50%" }}></span>
                                         <span className="fw-semibold">{service.exp_price}</span>
                                         <span className="mx-3" style={{ display: "inline-block", width: "7px", height: "7px", marginBottom: "3px", backgroundColor: "white", borderRadius: "50%" }}></span>
@@ -487,7 +488,7 @@ const ServiceRead = () => {
                     <SplideTrack className='mt-3'>
                         {
                             services?.map((service, index) => (
-                                <div className="card rounded-1 border-light bg-white shadow-sm h-100 mb-4 me-3" key={index} >
+                                <SplideSlide className="card rounded-1 border-light bg-white shadow-sm mb-4 me-3" key={index} >
                                     <div className="d-flex align-items-center p-3">
                                         <img src={`https://it.net.tm/yakynynda_api/api/img/service/${service.service_img}`} alt="" className="rounded-circle me-3" style={{ width: "50px", height: "50px", objectFit: "cover" }} />
                                         <small>
@@ -497,7 +498,7 @@ const ServiceRead = () => {
                                     </div>
                                     <img src={`https://it.net.tm/yakynynda_api/api/img/service/${service.service_img}`} alt="" style={{ height: "200px", width: "100%", objectFit: "cover" }} />
                                     <div className="card-body position-relative pb-5">
-                                        <div className="text-dark h5" style={{ letterSpacing: "1px" }}>{service.name_tm}</div>
+                                        <div className="text-dark h5" style={{ letterSpacing: "1px" }}>{service.name_tm.substring(0, 40)}...</div>
                                         <div className="d-flex align-items-center mb-2 mt-3" style={{ fontSize: "10px" }}>
                                             <FontAwesomeIcon icon={faStar} className="bg-yellow text-white me-1 p-1 rounded-1" />
                                             <FontAwesomeIcon icon={faStar} className="bg-yellow text-white me-1 p-1 rounded-1" />
@@ -510,7 +511,7 @@ const ServiceRead = () => {
                                             <Link to={`/service/${service.id}`} className="text-decoration-none text-yellow small mt-2 d-inline-block">Dowamyny gör <FontAwesomeIcon icon={faArrowRight} /></Link>
                                         </div>
                                     </div>
-                                </div>
+                                </SplideSlide>
                             ))
                         }
                     </SplideTrack>

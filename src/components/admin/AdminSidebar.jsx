@@ -38,6 +38,12 @@ const AdminSidebar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink to="/admin/service/busniss-accounts" className={`nav-link d-flex align-items-center text-dark`}>
+                            <FontAwesomeIcon icon={faCab} className="align-text-bottom me-2" />
+                            Biznes Hyzmatlar
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink to="/admin/banners" className={`nav-link d-flex align-items-center text-dark`}>
                             <FontAwesomeIcon icon={faImage} className="align-text-bottom me-2" />
                             Banners
